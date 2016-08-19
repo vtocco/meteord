@@ -11,9 +11,9 @@ docker run -d \
     --name binary_build \
     -e ROOT_URL=http://binary_build_app \
     -e BUNDLE_URL=https://s3.amazonaws.com/zeema-data/aa.tar.gz \
-    -e REBULD_NPM_MODULES=1 \
+    -e REBUILD_NPM_MODULES=1 \
     -p 9090:80 \
-    meteorhacks/meteord:binbuild
+    abernix/meteord:binbuild
 
 echo "Waiting for binary building is happening"
 sleep 20
