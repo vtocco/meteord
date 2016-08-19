@@ -4,13 +4,6 @@ set -e
 NODE_VERSION=4.5.0
 NODE_ARCH=x64
 
-# check we need to do this or not
-
-CUR_NODE=`/usr/bin/node -v`
-CUR_NODE_V="v$NODE_VERSION"
-
-if [ $CUR_NODE != $CUR_NODE_V ]; then
-
 NODE_DIST=node-v${NODE_VERSION}-linux-${NODE_ARCH}
 
 cd /tmp
@@ -21,7 +14,5 @@ mv ${NODE_DIST} /opt/nodejs
 
 ln -sf /opt/nodejs/bin/node /usr/bin/node
 ln -sf /opt/nodejs/bin/npm /usr/bin/npm
-
-fi
 
 npm install --global npm@3
