@@ -3,14 +3,14 @@ set -e
 
 if [ -d /bundle ]; then
   cd /bundle
-  tar xzf *.tar.gz
+  tar xzf *.tar.gz --owner=root --group=root --no-same-owner
   cd /bundle/bundle/programs/server/
   npm install --unsafe-perm
   cd /bundle/bundle/
 elif [[ $BUNDLE_URL ]]; then
   cd /tmp
   curl -L -o bundle.tar.gz $BUNDLE_URL
-  tar xzf bundle.tar.gz
+  tar xzf bundle.tar.gz --owner=root --group=root --no-same-owner
   cd /tmp/bundle/programs/server/
   npm install --unsafe-perm
   cd /tmp/bundle/
